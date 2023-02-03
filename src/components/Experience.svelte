@@ -1,14 +1,13 @@
 <script>
     export let experience;
-    import gsabLogo from "../public/assets/profile/gsabLogo.png";
 
     import Hero from "../shared/Hero.svelte";
     import ListBar from "../shared/ListBar.svelte";
 </script>
 
-<Hero photo={gsabLogo}>
-    <h2 style="font-size: 35px;">{experience.fullTitle}</h2>
-    <table>
+<Hero photo={experience.logo}>
+    <h2>{experience.fullTitle}</h2>
+    <table width="100%">
         <tr>
             <td>Duration:</td>
             <td>{experience.duration}</td>
@@ -27,11 +26,18 @@
 <ListBar title="Contributions" lists={experience.contributions} />
 <hr />
 <aside>
-    <h2 style="font-size: 35px;">Projects @ {experience.title}</h2>
+    <h2>Projects @ {experience.page.title}</h2>
     {#each experience.projects as project}
         <ListBar title={project.fullTitle} lists={project.purpose} />
     {/each}
 </aside>
 
 <style>
+    h2 {
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+    hr {
+        margin: 30px 0 0 0;
+    }
 </style>

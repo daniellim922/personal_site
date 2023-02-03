@@ -13,7 +13,7 @@
 
 <style>
     h3 {
-        font-size: 22px;
+        font-size: 20px;
         margin-bottom: 5px;
     }
     ul {

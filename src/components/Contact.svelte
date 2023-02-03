@@ -49,4 +49,7 @@
         display: flex;
         align-items: center;
     }
+    a {
+        color: black;
+    }
 </style>

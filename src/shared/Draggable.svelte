@@ -1,9 +1,11 @@
 <script>
+    import { onMount } from "svelte";
+
     export let page;
 
     const header = page.title;
     $: visible = page.visible;
-    let { left, top, width, height } = page.coordinates;
+    let { width, height, top, left } = page.coordinates;
 
     const hamburgers = [1, 2, 3, 4, 5, 6];
 
@@ -24,23 +26,53 @@
 
             left = intLeft;
             top = intTop;
+
+            if (top <= 65) {
+                top = 65;
+            }
+            if (left <= 0 + 2) {
+                left = 2;
+            }
+
+            if (left + folderWidth + 5 >= browserWidth) {
+                left = browserWidth - folderWidth - 5;
+            }
+            if (top + folderHeight + 5 >= browserHeight) {
+                top = browserHeight - folderHeight - 5;
+            }
         }
     };
+    let browserWidth;
+    let browserHeight;
 
-    let minHeight;
+    let folderHeight;
+    let folderWidth;
+
+    let mainHeight;
+
     let overflow = false;
-    $: if (height < minHeight) {
+    $: if (height < mainHeight) {
         overflow = true;
     }
 
     const closePage = () => {
         page.visible = false;
     };
+
+    import { zState } from "../store/stores";
+    const moveZIndexUp = () => {
+        $zState++;
+        page.coordinates.zIndex = $zState;
+    };
 </script>
 
 {#if visible}
     <section
-        style="left:{left}px; top:{top}px; width:{width}px; height:{height}px"
+        bind:clientHeight={folderHeight}
+        bind:clientWidth={folderWidth}
+        style="left:{left}px; top:{top}px; width:{width}px; height:{height}px; z-index:{page
+            .coordinates.zIndex}"
+        on:mousedown={moveZIndexUp}
     >
         <header on:mousedown={start}>
             <div>
@@ -48,7 +80,7 @@
                     <div class="hamburger" style="width: 15px;" />
                 {/each}
             </div>
-            <div class="cross-box" on:click={closePage}>
+            <div class="cross-box" on:mouseup={closePage}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -78,14 +110,21 @@
                 </div>
             </div>
         </header>
-        <main bind:clientHeight={minHeight} class:overflow>
+        <main class:overflow bind:clientHeight={mainHeight}>
             <slot />
         </main>
     </section>
 {/if}
-<svelte:window on:mouseup={stop} on:mousemove={move} />
+<svelte:window
+    on:mouseup={stop}
+    on:mousemove={move}
+    bind:innerWidth={browserWidth}
+    bind:innerHeight={browserHeight}
+/>
 
 <style>
+    @media screen and (min-width) {
+    }
     .hamburger {
         height: 2px;
         background-color: black;
@@ -115,7 +154,7 @@
         font-size: 30px;
     }
     section {
-        background-color: white;
+        background-color: #f8fafc;
         position: absolute;
         user-select: none;
         outline: solid 3px;

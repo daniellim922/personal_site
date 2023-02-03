@@ -1,29 +1,25 @@
 <script>
-    import Experience from "../components/Experience.svelte";
-    import AppBar from "../shared/AppBar.svelte";
+    import AppBar from "../components/AppBar.svelte";
     import Draggable from "../shared/Draggable.svelte";
 
-    import { pages, experiences } from "../store/stores";
+    import { pages, experiences, projects } from "../store/stores";
 </script>
 
 <AppBar />
 {#each $pages as page, i}
     <Draggable {page}>
-        <svelte:component this={page.component} />
+        <svelte:component this={page.component} title={page.title} />
     </Draggable>
 {/each}
 
 {#each $experiences as experience}
-    {#if experience.visible}
-        <Draggable
-            header={experience.title}
-            left="1000"
-            top="10"
-            width="750"
-            height="650"
-            visible={$pages[0].visible}
-        >
-            <Experience {experience} />
-        </Draggable>
-    {/if}
+    <Draggable page={experience.page}>
+        <svelte:component this={experience.page.component} {experience} />
+    </Draggable>
+{/each}
+
+{#each $projects as project}
+    <Draggable page={project.page}>
+        <svelte:component this={project.page.component} {project} />
+    </Draggable>
 {/each}
