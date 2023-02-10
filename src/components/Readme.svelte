@@ -3,7 +3,7 @@
 </script>
 
 <h1>Hi, I'm Daniel!</h1>
-<p>A Full Stack Developer and entrepreneur based in Singapore.</p>
+<p>A Full Stack Developer and Entrepreneur based in Singapore.</p>
 <p>Reach out to discuss on projects!</p>
 
 <style>
