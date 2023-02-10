@@ -23,10 +23,3 @@
         <svelte:component this={project.page.component} {project} />
     </Draggable>
 {/each}
-
-<style>
-    @font-face {
-        font-family: "Ark-Pixel";
-        src: url("/src/public/font/ark-pixel.otf") format("otf");
-    }
-</style>
