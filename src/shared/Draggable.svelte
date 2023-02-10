@@ -53,7 +53,7 @@
         overflow = true;
     }
     // make height shorter for smaller screen
-    $: if (browserHeight <= 1180 && height > 350) {
+    $: if (browserWidth <= 800 && height > 350) {
         height = 350;
     } else {
         // height = page.coordinates.height;
