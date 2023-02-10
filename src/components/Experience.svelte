@@ -33,6 +33,15 @@
 </aside>
 
 <style>
+    @media screen and (max-width: 700px) {
+        h2 {
+            font-size: 25px !important;
+            margin-bottom: 5px !important;
+        }
+        td {
+            font-size: 12px;
+        }
+    }
     h2 {
         font-size: 35px;
         margin-bottom: 20px;

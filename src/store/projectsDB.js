@@ -8,7 +8,7 @@ export const projectsDB = [
                 top: 250,
                 left: 800,
                 width: 750,
-                height: 650,
+                height: 400,
                 zIndex: 0,
             },
             visible: false,

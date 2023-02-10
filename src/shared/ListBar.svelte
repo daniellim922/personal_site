@@ -12,6 +12,15 @@
 </div>
 
 <style>
+    @media screen and (max-width: 700px) {
+        li {
+            font-size: 12px;
+        }
+        h3 {
+            font-size: 20px !important;
+            margin-bottom: 0 !important;
+        }
+    }
     h3 {
         font-size: 20px;
         margin-bottom: 5px;

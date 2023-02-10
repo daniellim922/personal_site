@@ -1,6 +1,4 @@
 <script>
-    import { onMount } from "svelte";
-
     export let page;
 
     const header = page.title;
@@ -54,6 +52,31 @@
     $: if (height < mainHeight) {
         overflow = true;
     }
+    // make height shorter for smaller screen
+    $: if (browserHeight <= 1180 && height > 350) {
+        height = 350;
+    } else {
+        // height = page.coordinates.height;
+    }
+
+    $: if (browserWidth >= 700) {
+        width = page.coordinates.width;
+    }
+    $: if (browserWidth <= 700 && browserWidth >= 400) {
+        width = 400;
+    }
+    $: if (browserWidth <= 400) {
+        width = 370;
+    }
+
+    setInterval(() => {
+        if (left + folderWidth >= browserWidth) {
+            left = left - 3;
+        }
+        if (top + folderHeight >= browserHeight) {
+            top = top - 3;
+        }
+    }, 1);
 
     const closePage = () => {
         page.visible = false;
@@ -68,6 +91,7 @@
 
 {#if visible}
     <section
+        class="section-box"
         bind:clientHeight={folderHeight}
         bind:clientWidth={folderWidth}
         style="left:{left}px; top:{top}px; width:{width}px; height:{height}px; z-index:{page
@@ -110,7 +134,7 @@
                 </div>
             </div>
         </header>
-        <main class:overflow bind:clientHeight={mainHeight}>
+        <main class:overflow bind:clientHeight={mainHeight} class="main-box">
             <slot />
         </main>
     </section>
@@ -123,8 +147,12 @@
 />
 
 <style>
-    @media screen and (min-width) {
+    @media screen and (max-width: 700px) {
+        .main-box {
+            padding: 15px 15px 15px 15px;
+        }
     }
+
     .hamburger {
         height: 2px;
         background-color: black;
@@ -153,7 +181,7 @@
         margin: 0px 20px 0px 20px;
         font-size: 30px;
     }
-    section {
+    .section-box {
         background-color: #f8fafc;
         position: absolute;
         user-select: none;
@@ -177,7 +205,7 @@
         align-items: center;
         padding: 5px;
     }
-    main {
+    .main-box {
         padding: 15px 30px 15px 30px;
     }
     .overflow {

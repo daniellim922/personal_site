@@ -17,7 +17,7 @@
 
 <div>
     <Hero photo={daniel}>
-        <h2 style="font-size: 35px;">Daniel Lim</h2>
+        <h2>Daniel Lim</h2>
         <p>
             I take pride in writing maintainable and testable code. I work best
             under pressure and fast pace environments. I love reading and
@@ -39,12 +39,36 @@
             <ListBar title={"Skills"} lists={skills} />
         </div>
         <div class="hero-img-box">
-            <img src={face} alt="icon_of_a_face" width="auto" height="200px" />
+            <img src={face} class="hero-img" alt="icon_of_a_face" />
         </div>
     </div>
 </div>
 
 <style>
+    @media screen and (max-width: 700px) {
+        h2 {
+            font-size: 25px !important;
+            margin-bottom: 0px !important;
+        }
+        p {
+            font-size: 12px !important;
+            margin-top: 8px !important;
+        }
+        .hero-img {
+            width: auto;
+            height: 120px !important;
+        }
+        li {
+            font-size: 12px;
+        }
+        h3 {
+            font-size: 20px !important;
+            margin-bottom: 0 !important;
+        }
+    }
+    h2 {
+        font-size: 35px;
+    }
     .hero-box {
         display: flex;
         justify-content: space-around;
@@ -54,6 +78,10 @@
         align-items: center;
         justify-content: center;
         width: 50%;
+    }
+    .hero-img {
+        width: auto;
+        height: 200px;
     }
     h3 {
         font-size: 25px;

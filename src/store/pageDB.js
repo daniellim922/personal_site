@@ -20,8 +20,8 @@ export const pageDB = [
     {
         title: "About",
         coordinates: {
-            top: 160,
-            left: 700,
+            top: 380,
+            left: 570,
             width: 600,
             height: 620,
             zIndex: 0,
@@ -32,8 +32,8 @@ export const pageDB = [
     {
         title: "Contact",
         coordinates: {
-            top: 400,
-            left: 120,
+            top: 100,
+            left: 700,
             width: 450,
             height: 250,
             zIndex: 0,
@@ -44,8 +44,8 @@ export const pageDB = [
     {
         title: "Experience",
         coordinates: {
-            top: 100,
-            left: 1350,
+            top: 380,
+            left: 50,
             width: 450,
             height: 220,
             zIndex: 0,
@@ -57,8 +57,8 @@ export const pageDB = [
     {
         title: "Project",
         coordinates: {
-            top: 500,
-            left: 1350,
+            top: 630,
+            left: 50,
             width: 450,
             height: 220,
             zIndex: 0,
