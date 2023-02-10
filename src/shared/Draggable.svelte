@@ -98,7 +98,7 @@
             .coordinates.zIndex}"
         on:mousedown={moveZIndexUp}
     >
-        <header on:mousedown={start}>
+        <header on:mousedown={start} on:dragstart={start}>
             <div>
                 {#each hamburgers as hamburger}
                     <div class="hamburger" style="width: 15px;" />
@@ -141,6 +141,8 @@
 {/if}
 <svelte:window
     on:mouseup={stop}
+    on:dragstop={stop}
+    on:dragstart={move}
     on:mousemove={move}
     bind:innerWidth={browserWidth}
     bind:innerHeight={browserHeight}
