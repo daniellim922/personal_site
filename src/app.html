@@ -6,7 +6,27 @@
   <link rel="icon" href="%sveltekit.assets%/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daniel Lim</title>
-  <link rel="stylesheet" href="/src/public/styles/global.css">
+  <style>
+    @font-face {
+      font-family: "Ark-Pixel";
+      src: url("/src/public/font/ark-pixel.otf");
+    }
+
+    .background {
+      background: black;
+      background-image: radial-gradient(#f8fafc 1px, transparent 0);
+      background-size: 4px 4px;
+      background-position: -17px -17px;
+      margin: 0 0 0 0;
+    }
+
+    html {
+      font-family: "Ark-Pixel";
+      font-weight: 800;
+
+      overflow: hidden;
+    }
+  </style>
   %sveltekit.head%
 </head>
 
