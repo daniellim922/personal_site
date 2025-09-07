@@ -6,7 +6,6 @@
 
     import uowrbs from "../public/assets/video/UOWRBS.mp4";
     let vidboxWidth;
-    console.log(vidboxWidth);
 </script>
 
 <Hero photo={project.logo}>

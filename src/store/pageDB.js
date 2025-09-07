@@ -46,8 +46,8 @@ export const pageDB = [
         coordinates: {
             top: 380,
             left: 50,
-            width: 450,
-            height: 220,
+            width: 650,
+            height: 250,
             zIndex: 0,
         },
         visible: false,

@@ -24,13 +24,16 @@
 </Hero>
 <ListBar title="Responsibilites" lists={experience.responsibilities} />
 <ListBar title="Contributions" lists={experience.contributions} />
-<hr />
-<aside>
-    <h2>Projects @ {experience.page.title}</h2>
-    {#each experience.projects as project}
-        <ListBar title={project.fullTitle} lists={project.purpose} />
-    {/each}
-</aside>
+
+{#if experience.projects}
+    <hr />
+    <aside>
+        <h2>Projects @ {experience.page.title}</h2>
+        {#each experience.projects as project}
+            <ListBar title={project.fullTitle} lists={project.purpose} />
+        {/each}
+    </aside>
+{/if}
 
 <style>
     @media screen and (max-width: 700px) {

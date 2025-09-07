@@ -15,6 +15,7 @@
     @media screen and (max-width: 700px) {
         li {
             font-size: 12px;
+            margin-top: 5px;
         }
         h3 {
             font-size: 20px !important;

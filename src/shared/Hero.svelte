@@ -28,6 +28,6 @@
         margin-top: 10px;
     }
     .hero-text-box {
-        margin: 0px 20px 10px 40px;
+        margin: 0px 10px 10px 40px;
     }
 </style>

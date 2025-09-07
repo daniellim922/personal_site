@@ -4,11 +4,9 @@
     import Hero from "../shared/Hero.svelte";
     import ListBar from "../shared/ListBar.svelte";
 
-    const hobbies = ["Coding", "Gymming", "Reading"];
+    const hobbies = ["Diving", "Gymming", "Reading"];
     const skills = [
-        "HTML,CSS,JS",
-        "TS",
-        "Jest",
+        "HTML,CSS,JS,TS",
         "NodeJS",
         "Mongoose",
         "Svelte",
@@ -30,9 +28,9 @@
                 <h3>Education:</h3>
                 <ul style="list-style-type: none; padding:0">
                     <li>SIM University Of Wollongong</li>
-                    <li>2022 - Present (Expected 2025)</li>
+                    <li>2022 - 2025</li>
                     <li>BSc. (Hons.) in Computer Science</li>
-                    <li>Digital Systems Security</li>
+                    <li>Big Data</li>
                 </ul>
             </div>
             <ListBar title={"Hobbies"} lists={hobbies} />
