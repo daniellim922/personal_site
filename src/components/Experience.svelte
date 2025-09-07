@@ -3,7 +3,7 @@
 
     import Hero from "../shared/Hero.svelte";
     import ListBar from "../shared/ListBar.svelte";
-    import mail from "../public/assets/profile/accenture.png";
+    import accenture from "../public/assets/profile/accenture.png";
 
 </script>
 
