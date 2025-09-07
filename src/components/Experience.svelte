@@ -3,12 +3,10 @@
 
     import Hero from "../shared/Hero.svelte";
     import ListBar from "../shared/ListBar.svelte";
-    import accenture from "../public/assets/profile/accenture.png";
 
 </script>
 
 <Hero photo={experience.logo}>
-    <img src={accenture} alt="image_of_Daniel_Lim" width="auto" />
     <h2>{experience.fullTitle}</h2>
     <table width="100%">
         <tr>
